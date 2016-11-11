@@ -54,7 +54,7 @@
                                                                    actionHandler:^(LGPlusButtonsView *plusButtonView, NSString *title, NSString *description, NSUInteger index)
                             {
                                 NSLog(@"actionHandler | title: %@, description: %@, index: %lu", title, description, (long unsigned)index);
-
+                                
                                 if (index == 0)
                                     [_plusButtonsViewNavBar hideAnimated:YES completionHandler:nil];
                             }];
@@ -114,7 +114,12 @@
         [_plusButtonsViewMain setButtonAtIndex:0 titleFont:[UIFont systemFontOfSize:32.f] forOrientation:LGPlusButtonsViewOrientationLandscape];
     }
 
+    [_plusButtonsViewMain setDescriptionsTap];
+    
+    [_plusButtonsViewMain setButtonsIdentifiers:@[@"A", @"B", @"C", @"D"]];
+
     [self.navigationController.view addSubview:_plusButtonsViewMain];
+    
 
     // -----
 

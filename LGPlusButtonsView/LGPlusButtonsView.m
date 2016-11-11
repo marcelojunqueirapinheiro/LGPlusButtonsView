@@ -386,6 +386,17 @@ typedef NS_ENUM(NSUInteger, LGPlusButtonDescriptionsPosition)
 
 #pragma mark Buttons all
 
+- (void)setButtonsIdentifiers:(NSArray *)identifiers
+{
+    NSAssert(_buttonsArray.count == identifiers.count, kLGPlusButtonsViewAssertionWarning(@"identifiers"));
+    
+    for (NSUInteger i=0; i<_buttonsArray.count; i++)
+        if ([identifiers[i] isKindOfClass:[NSString class]])
+            [_buttonsArray[i] setAccessibilityIdentifier:identifiers[i]];
+
+    [self setNeedsLayout];
+}
+
 - (void)setButtonsTitles:(NSArray *)titles forState:(UIControlState)state
 {
     NSAssert(_buttonsArray.count == titles.count, kLGPlusButtonsViewAssertionWarning(@"titles"));
@@ -782,8 +793,6 @@ typedef NS_ENUM(NSUInteger, LGPlusButtonDescriptionsPosition)
         [description addGestureRecognizer:tapGesture];
     }
 }
-
-
 
 #pragma mark //
 

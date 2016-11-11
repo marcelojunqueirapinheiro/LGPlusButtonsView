@@ -149,7 +149,7 @@ typedef NS_ENUM(NSUInteger, LGPlusButtonAnimationType)
 - (UIEdgeInsets)contentEdgeInsetsForOrientation:(LGPlusButtonsViewOrientation)orientation;
 
 #pragma mark - Buttons all
-
+- (void)setButtonsIdentifiers:(NSArray *)identifiers;
 - (void)setButtonsTitles:(NSArray *)titles                     forState:(UIControlState)state;
 - (void)setButtonsTitleColor:(UIColor *)titleColor             forState:(UIControlState)state;
 - (void)setButtonsTitleColors:(NSArray *)titleColors           forState:(UIControlState)state;
